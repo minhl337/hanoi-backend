@@ -61,16 +61,7 @@ Solves the Tower of Hanoi puzzle from any valid state.
 }
 ```
 
-## Deploy to Render
-
-1. Create a new **Web Service** on [Render](https://render.com)
-2. Connect your GitHub repository
-3. Configure:
-   - **Build Command:** `npm install && npm run build`
-   - **Start Command:** `npm start`
-4. Deploy
-
-Render automatically provides the `PORT` environment variable.
+## Deployed to render: `https://hanoi-backend.onrender.com`
 
 ## Scripts
 
