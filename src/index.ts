@@ -2,7 +2,6 @@ import express, { Request, Response } from "express"
 import cors from "cors"
 import { SolveRequest, SolveResponse, ErrorResponse, RodName } from "./types"
 import { validateState, solve, calculateMoveCount } from "./hanoi"
-import { SUMMARY_MESSAGE } from "./config"
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -14,6 +13,7 @@ app.post(
   "/api/hanoi/solve",
   (req: Request, res: Response<SolveResponse | ErrorResponse>) => {
     const { n, to, state, maxMoves } = req.body as SolveRequest
+    const SUMMARY_MESSAGE = `Too many moves to list or auto-solve. Reduce n to ${n} or less.`
 
     // Validate request structure
     if (typeof n !== "number" || n < 1) {
